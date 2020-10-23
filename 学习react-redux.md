@@ -7,10 +7,16 @@
 ## 如何在组件中获取 redux 的 store:
 
 -  connect 高阶组件 (传入函数，返回一个新的函数)，将组件需要的state，以及dispatch 传给组件
+
   - connect(callback) - callback 可以拿到 state  ，返回需要用到的 state 
+
   - callback 必须有一个对象类型的返回值，该返回值决定了哪些参数需要传递给组件
+
   - connect 被调用后 会返回一个高阶组件，高阶组件再调用返回可以使用redux的组件
+
   - 在组件的props可以拿到筛选后的state和dispatch方法
+
+    **配合redux就能使用了**
 
 - react-redux 提供的 hooks (react-redux 版本7):
   - useDispatch 获取 dispatch
@@ -29,8 +35,15 @@
 
 review
 
+20201023
+
 20201022
 
 update
 
+20201023
+
 20201022
+
+
+
