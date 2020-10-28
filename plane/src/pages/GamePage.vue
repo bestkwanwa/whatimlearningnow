@@ -1,48 +1,61 @@
 <template>
   <container>
     <Map></Map>
-    <Plane :x='planeInfo.x' :y='planeInfo.y'></Plane>
+    <Plane :x="planeInfo.x" :y="planeInfo.y"></Plane>
+    <EnemyPlane
+      v-for="(enemyPlane, index) in enemyPlanes"
+      :key="index"
+      :x="enemyPlane.x"
+      :y="enemyPlane.y"
+    ></EnemyPlane>
+    <Bullet
+      v-for="(bullet, index) in bullets"
+      :key="index"
+      :x="bullet.x"
+      :y="bullet.y"
+    ></Bullet>
   </container>
 </template>
 
 <script>
-import Map from '../components/Map';
-import Plane from '../components/Plane';
-import {reactive} from 'vue';
+import Map from "../components/Map";
+import Plane from "../components/Plane";
+import EnemyPlane from "../components/EnemyPlane";
+import Bullet from "../components/Bullet";
+import { usePlane } from "../game/plane";
+import { useEnemyPlane } from "../game/enemyPlane";
+import { useBullet } from "../game/bullet";
+import {useFight} from '../game/fight';
 export default {
-  components:{
+  components: {
     Map,
-    Plane
+    Plane,
+    EnemyPlane,
+    Bullet,
   },
-  setup() {
-    const planeInfo=reactive({
-      x:150,
-      y:150
-    })
-
-    const speed=10
-    window.addEventListener('keyup',e=>{
-        switch (e.code) {
-          case 'ArrowUp':
-            planeInfo.y-=speed
-            break;
-          case 'ArrowDown':
-            planeInfo.y+=speed
-            break;
-          case 'ArrowLeft':
-            planeInfo.x-=speed
-            break;
-          case 'ArrowRight':
-            planeInfo.x+=speed
-            break;
-          default:
-            break;
-        }
+  setup(_,{emit}) {
+    // vue3 composition api
+    const { bullets, addBullet } = useBullet();
+    const { planeInfo } = usePlane({
+      attack(info) {
+        addBullet(info);
+      },
+    });
+    const { enemyPlanes } = useEnemyPlane();
+    useFight({
+      plane:planeInfo,
+      enemyPlanes,
+      bullets,
+      gameOver(){
+        emit('change-page','EndPage')
+      }
     })
 
     return {
-      planeInfo
-    }
+      planeInfo,
+      enemyPlanes,
+      bullets,
+    };
   },
 };
 </script>

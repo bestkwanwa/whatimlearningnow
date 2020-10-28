@@ -8,13 +8,14 @@
 import { ref, computed } from "vue";
 import StartPage from "./pages/StartPage";
 import GamePage from "./pages/GamePage";
+import EndPage from "./pages/EndPage";
 export default {
   name: "App",
   components: {
     // StartPage,
   },
   setup() {
-    const currentPageName = ref("GamePage");
+    const currentPageName = ref("StartPage");
     const handleChangePage = (pageName) => {
       currentPageName.value = pageName;
     };
@@ -24,6 +25,8 @@ export default {
         return StartPage;
       } else if (currentPageName.value === "GamePage") {
         return GamePage;
+      }else if(currentPageName.value==='EndPage'){
+        return EndPage
       }
     });
 

@@ -1,6 +1,6 @@
 // 实现基于 canvas 的自定义渲染器
 import { createRenderer } from 'vue';
-import { Container, Sprite, Texture } from 'pixi.js';
+import { Container, Sprite, Texture ,Text} from 'pixi.js';
 
 const renderer = new createRenderer({
     // 根据 type 返回创建的元素
@@ -49,6 +49,10 @@ const renderer = new createRenderer({
                 el[key] = nextValue
                 break;
         }
+    },
+    createText(text){
+        console.log(text);
+        return new Text(text)
     },
     nextSibling() {
         // vue 会调用，必须提供这个函数

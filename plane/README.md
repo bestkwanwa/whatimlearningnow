@@ -1,6 +1,9 @@
 # plane
 
 vue3+pixi.js实现飞机大战
+- 熟悉 vue3 compositon api 的使用
+- 学习自定义渲染函数
+- 学习 vue3 初始化和更新流程
 
 ## 页面
 - 开始页面
