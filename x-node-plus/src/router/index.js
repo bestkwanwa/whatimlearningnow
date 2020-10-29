@@ -52,4 +52,20 @@ const routes=[
     },
 ]
 
-export {routes}
+// 导航表
+const navs=[
+    {
+        to:'/',
+        title:'首页',
+    },
+    {
+        to:'/getstart',
+        title:'入门',
+    },
+    {
+        to:'/about',
+        title:'关于我们',
+    },
+]
+
+export {routes,navs}
