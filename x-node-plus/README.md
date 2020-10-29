@@ -15,3 +15,17 @@
 - topic详情
 - user详情
 - 关于
+
+## WorkFlow
+
+### 初始化项目 & 划分项目结构
+- 配置 config-overrides ，设置 babel 按需加载
+- 建立便于维护的项目结构
+    - component >> 通用组件
+    - view >> 路由对应视图
+    - router >> 路由相关信息
+    - store >> redux仓库
+    - static >> 静态资源
+
+### 路由规划
+- 建立路由表
