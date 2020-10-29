@@ -8,7 +8,7 @@ function App() {
   console.log(routes);
   return (
     <Layout>
-      <h1>本项目仅作学习用途，感谢cnodejs.org提供的api。请移步cnodejs.org获得完整的社区体验！</h1>
+      <h1 style={{textAlign:'center'}}>本项目仅作学习用途，感谢cnodejs.org提供的api。请移步cnodejs.org获得完整的社区体验！</h1>
       <Header></Header>
       <Layout.Content>
         <div className='wrap'>

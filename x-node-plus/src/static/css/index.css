@@ -2,8 +2,18 @@
 .wrap{
     margin: 0 5px;
 }
+#header{
+    padding: 0;
+}
+#header .ant-menu{
+    line-height: 64px   ;
+}
 #footer{
     padding: 24px 0;
+}
+.logo{
+    margin: 0;
+    text-align: center;
 }
 /* 媒体查询 */
 /* >=576 */
