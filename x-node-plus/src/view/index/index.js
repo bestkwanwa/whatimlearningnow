@@ -1,11 +1,8 @@
 import React from 'react';
-
-export default function IndexPage(props){
-    let {username}=props
+import IndexNav from './indexNav';
+export default function IndexPage(props) {
+    let { username } = props
     return (
-        <h1>
-            {username}
-            -indexpage
-        </h1>
+        <IndexNav></IndexNav>
     )
 }
