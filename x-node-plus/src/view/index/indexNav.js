@@ -10,7 +10,7 @@ export default function IndexNav() {
     let activeIndex=types.findIndex(item=>item===tab)
     activeIndex=activeIndex===-1?0:activeIndex
     return (
-        <Menu mode='horizontal' selectedKeys={[activeIndex+'']}>
+        <Menu className='index_nav' mode='horizontal' selectedKeys={[activeIndex+'']}>
             {subNavs.map((item, index) => {
                 return <Menu.Item key={index}>
                     <Link to={item.to}>{item.title}</Link>

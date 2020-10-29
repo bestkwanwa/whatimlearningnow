@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import IndexNav from './indexNav';
+import TopicList from '../../component/TopicList';
 export default function IndexPage(props) {
     let { username } = props
     return (
-        <IndexNav></IndexNav>
+        <Fragment>
+            <IndexNav></IndexNav>
+            <TopicList
+                data={[]}
+                loading={true}
+            ></TopicList>
+        </Fragment>
+        
     )
 }

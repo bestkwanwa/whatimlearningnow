@@ -4,9 +4,11 @@ import { routes } from './router';
 import { Layout } from 'antd';
 import Header from './component/Header';
 import Footer from './component/Footer';
+// 保证覆盖
+import './static/css/index.css';
 function App() {
   return (
-    <Layout>
+    <Layout className='page'>
       <h1 style={{textAlign:'center'}}>本项目仅作学习用途，感谢cnodejs.org提供的api。请移步cnodejs.org获得完整的社区体验！</h1>
       <Header></Header>
       <Layout.Content>

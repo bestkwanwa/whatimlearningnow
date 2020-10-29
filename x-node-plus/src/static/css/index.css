@@ -1,4 +1,7 @@
 /* <576 */
+#root .page{
+    height: 100vh;
+}
 .wrap{
     margin: 0 5px;
 }
@@ -15,6 +18,13 @@
     margin: 0;
     text-align: center;
 }
+.wrap .topic_list{
+    background-color: #ffffff;
+    padding: 0 15px;
+}
+.index_nav{
+    margin-top: 10px;
+}
 /* 媒体查询 */
 /* >=576 */
 @media all and (min-width:576px){
@@ -26,6 +36,10 @@
 @media all and (min-width:768px){
     .wrap{
         margin: 0 15px;
+    }
+    .wrap .topic_list{
+        background-color: #ffffff;
+        padding: 0 20px;
     }
 }
 /* >=992 */
@@ -39,6 +53,10 @@
     .wrap{
         width: 980px;
         margin: 0 auto;
+    }
+    .wrap .topic_list{
+        background-color: #ffffff;
+        padding: 0 30px;
     }
 }
 /* >=1600 */
