@@ -1,0 +1,40 @@
+/* <576 */
+.wrap{
+    margin: 0 5px;
+}
+#footer{
+    padding: 24px 0;
+}
+/* 媒体查询 */
+/* >=576 */
+@media all and (min-width:576px){
+    .wrap{
+        margin: 0 10px;
+    }
+}
+/* >=768 */
+@media all and (min-width:768px){
+    .wrap{
+        margin: 0 15px;
+    }
+}
+/* >=992 */
+@media all and (min-width:992px){
+    .wrap{
+        margin: 0 20px;
+    }
+}
+/* >=1200 */
+@media all and (min-width:1200px){
+    .wrap{
+        width: 980px;
+        margin: 0 auto;
+    }
+}
+/* >=1600 */
+@media all and (min-width:1600px){
+    .wrap{
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
