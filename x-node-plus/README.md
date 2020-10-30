@@ -19,6 +19,7 @@
         - tag
         - title
         - date
+    - 翻页导航
 - topic详情
 - user详情
 - 关于
@@ -70,3 +71,7 @@
 - 日期
     - moment.js >> day.js
 
+### 分页导航
+- antd 4.0.1 Pagination current 属性的 bug
+    使用 defaultCurrent ，每次请求重新渲染
+- Pagination 使用 onChange 比 itemRender 性能更好

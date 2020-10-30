@@ -11,7 +11,7 @@ function App() {
     <Layout className='page'>
       <h1 style={{textAlign:'center'}}>本项目仅作学习用途，感谢cnodejs.org提供的api。请移步cnodejs.org获得完整的社区体验！</h1>
       <Header></Header>
-      <Layout.Content>
+      <Layout.Content className='app-content'>
         <div className='wrap'>
           <Switch>
             {routes.map((item, index) => {

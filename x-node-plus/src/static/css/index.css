@@ -2,6 +2,9 @@
 #root .page{
     height: 100vh;
 }
+.app-content{
+    min-height: auto;
+}
 .wrap{
     margin: 0 5px;
 }
@@ -30,6 +33,15 @@
 }
 .from-now{
     text-align: right;
+}
+.index-pagination{
+    border-top: 1px solid #f0f0f0;
+    padding: 10px 15px;
+    background: #fff;
+    display: flex;
+}
+.index-pagination>ul{
+    margin: auto;
 }
 /* 媒体查询 */
 /* >=576 */
