@@ -25,6 +25,9 @@
 .index_nav{
     margin-top: 10px;
 }
+.topic_tag{
+    margin: 0 5px;
+}
 /* 媒体查询 */
 /* >=576 */
 @media all and (min-width:576px){
