@@ -53,4 +53,7 @@
 - 初始化
 - 获取数据
 
-### 
+### 请求数据
+- 利用 React Hooks 请求数据
+    - axios 请求数据
+    - dispatch 更新 store

@@ -22,8 +22,11 @@ const routes = [
             let { search } = location
             let { tab, page } = qs.parse(search.substring(1))
             // 当search为空时 或者 当tab为types之一（page可以不存在，若存在，则必须大于0）
-            if ((tab === undefined && page === undefined
-                || (types.includes(tab) && (page === undefined || page > 0)))) {
+            if (
+                (tab === undefined && page === undefined)
+                ||
+                (types.includes(tab) && (page === undefined || page > 0))
+            ) {
                 return <IndexPage {...props}></IndexPage>
             }
             return <NotFoundPage></NotFoundPage>

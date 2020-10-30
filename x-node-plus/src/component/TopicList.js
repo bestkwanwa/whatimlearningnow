@@ -8,7 +8,8 @@ export default function TopicList(props) {
             loading={loading}
             dataSource={data}
             renderItem={(data) => {
-                return <List.Item>{data}</List.Item>
+                // console.log('===render item===',data);
+                return <List.Item>{1}</List.Item>
             }}
         ></List>
     )
