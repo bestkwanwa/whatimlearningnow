@@ -18,6 +18,7 @@
         - avatar
         - tag
         - title
+        - date
 - topic详情
 - user详情
 - 关于
@@ -30,7 +31,8 @@
     - component >> 通用组件
         - Header
         - Footer
-        - List
+        - TopicList
+        - TopicTag
     - view >> 路由对应视图
     - router >> 路由相关信息
     - store >> redux仓库
@@ -65,3 +67,6 @@
 - 头像
 - 标签
 - 标题
+- 日期
+    - moment.js >> day.js
+

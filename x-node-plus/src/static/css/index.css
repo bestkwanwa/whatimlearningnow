@@ -28,6 +28,9 @@
 .topic_tag{
     margin: 0 5px;
 }
+.from-now{
+    text-align: right;
+}
 /* 媒体查询 */
 /* >=576 */
 @media all and (min-width:576px){
