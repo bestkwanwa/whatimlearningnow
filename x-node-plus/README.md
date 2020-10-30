@@ -15,6 +15,8 @@
     - 首页导航
     - 首页子导航
     - 列表组件
+        - avatar
+        - tag
 - topic详情
 - user详情
 - 关于
@@ -57,3 +59,6 @@
 - 利用 React Hooks 请求数据
     - axios 请求数据
     - dispatch 更新 store
+
+### 列表组件
+- 头像

@@ -27,6 +27,7 @@ const http = axios.create({
 //     }
 // }
 
+const tabs = ['share', 'ask', 'job']
 // 在自定义hooks中使用其他hooks
 function useTopicsList() {
     let dispatch = useDispatch()
@@ -37,16 +38,18 @@ function useTopicsList() {
         })
         http.get(`/topics`).then((res) => {
             // 在这里进行数据筛选
-            // console.log(res);
-            console.log('good',res.data);
+            // console.log('good',res.data);
             let { data } = res.data
-            console.log(data);
-            let newData=data.filter(item => item.tab === tab||item.good===true)
-            console.log('=====',newData);
-            console.log('before dispatch', tab, page);
+            // let newData=data.filter(item => item.tab === tab||item.good===true)
+            let newData = []
+            if (tabs.includes(tab)) {
+                newData = data.filter(item => item.tab === tab)
+            }else{
+                newData=data
+            }
             dispatch({
                 type: 'topics_loadover',
-                data: res.data.data
+                data: newData
             })
         })
     }
