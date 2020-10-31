@@ -75,3 +75,6 @@
 - antd 4.0.1 Pagination current 属性的 bug
     使用 defaultCurrent ，每次请求重新渲染
 - Pagination 使用 onChange 比 itemRender 性能更好
+
+### 错误提示框
+- 请求失败后，提示错误信息
