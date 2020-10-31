@@ -2,9 +2,9 @@
 img{
     max-width: 100%;
 }
-#root .page{
+/* #root .page{
     height: 100vh;
-}
+} */
 .app-content{
     min-height: auto;
 }

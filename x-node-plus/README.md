@@ -21,6 +21,8 @@
         - date
     - 翻页导航
 - topic详情
+    - content
+    - comment
 - user详情
 - 关于
 
@@ -80,6 +82,6 @@
 - 请求失败后，提示错误信息
 
 ### 主题详情
-- Card 组件
+- 正文 >> Card 组件
     - 注意 title 属性的设置
-
+- 评论 >> Comment 组件

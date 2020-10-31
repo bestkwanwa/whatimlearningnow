@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useTopic } from '../../store/action';
 import { Alert } from 'antd';
 import Details from './details';
+import Replies from './replies';
 export default function TopicPage() {
     let history = useHistory()
     let { id } = useParams()
@@ -32,7 +33,9 @@ export default function TopicPage() {
                         loading={loading}
                         data={data}
                     ></Details>
+                    <Replies loading={loading} data={data.replies}></Replies>
                 </Fragment>}
+
         </div>
     )
 }

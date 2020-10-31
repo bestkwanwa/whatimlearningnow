@@ -13,7 +13,7 @@ export default function Header() {
                     <Row>
                         <Col xs={6} sm={4} md={2}>
                             <h1 className='logo'>
-                                <Link to={'/'}>logo</Link>
+                                <Link to={'/'}>XNode</Link>
                             </h1>
                         </Col>
                         <Col xs={18} sm={20} md={22}>
