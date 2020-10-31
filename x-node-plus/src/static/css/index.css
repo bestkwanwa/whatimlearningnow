@@ -1,4 +1,7 @@
 /* <576 */
+img{
+    max-width: 100%;
+}
 #root .page{
     height: 100vh;
 }
@@ -42,6 +45,9 @@
 }
 .index-pagination>ul{
     margin: auto;
+}
+#topic .ant-card-head{
+    margin-top: 10px;
 }
 /* 媒体查询 */
 /* >=576 */

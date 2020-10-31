@@ -6,11 +6,7 @@ import TopicTag from './TopicTag';
 // import moment from 'moment';
 // import 'moment/locale/zh-cn';
 // moment.locale('zh-cn')
-import dayjs from 'dayjs';
-var relativeTime = require('dayjs/plugin/relativeTime')
-dayjs.extend(relativeTime)
-require('dayjs/locale/zh-cn')
-dayjs.locale('zh-cn')
+import FromNow from '../component/FromNow';
 
 export default function TopicList(props) {
     let { loading, data } = props
@@ -30,10 +26,10 @@ export default function TopicList(props) {
                         </Link>
                         <TopicTag tab={top ? "top" : (good ? "good" : tab)}>
                         </TopicTag>
-                        <Link style={{marginLeft:'10px'}} to={`/topics/${id}`}>{title}</Link>
+                        <Link style={{ marginLeft: '10px' }} to={`/topic/${id}`}>{title}</Link>
                     </Col>
                     <Col xs={0} md={2} className='from-now'>
-                        {dayjs(last_reply_at).fromNow()}
+                        <FromNow date={last_reply_at}></FromNow>
                     </Col>
                 </List.Item>
             }}

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
 import { useTopic } from '../../store/action';
 import { Alert } from 'antd';
+import Details from './details';
 export default function TopicPage() {
     let history = useHistory()
     let { id } = useParams()
@@ -11,9 +12,8 @@ export default function TopicPage() {
     useEffect(() => {
         getData(id)
     }, [id])
-    console.log(loading, data, isError, err_msg);
     return (
-        <div>
+        <div id='topic'>
             {isError ? <Alert
                 closable
                 type={'error'}
@@ -24,10 +24,15 @@ export default function TopicPage() {
                         <p>点击关闭按钮返回上一页</p>
                     </Fragment>
                 }
-                afterClose={()=>{
+                afterClose={() => {
                     history.goBack()
                 }}
-            ></Alert> : ''}
+            ></Alert> : <Fragment>
+                    <Details
+                        loading={loading}
+                        data={data}
+                    ></Details>
+                </Fragment>}
         </div>
     )
 }

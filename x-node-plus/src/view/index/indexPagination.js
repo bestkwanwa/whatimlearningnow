@@ -7,7 +7,6 @@ export default function IndexPagination() {
     let { search } = useLocation()
     let { tab = 'all', page = 1 } = qs.parse(search.substring(1))
     let {push}=useHistory()
-    console.log(push);
     return (
         <div className='index-pagination'>
             <Pagination
