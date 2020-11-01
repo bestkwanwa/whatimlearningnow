@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import FromNow from '../../component/FromNow';
 export default function Details(props) {
     let { loading, data } = props
-    console.log('detail', data);
     let { author, content, create_at, good, top, tab, title, visit_count } = data
-    console.log(author);
     return (
         <Card
             bordered

@@ -16,7 +16,6 @@ export default function TopicList(props) {
             loading={loading}
             dataSource={data}
             renderItem={(data) => {
-                // console.log('===render item===', data);
                 let { author, last_reply_at, good, top, tab, title, id } = data
                 let { loginname, avatar_url } = author
                 return <List.Item>

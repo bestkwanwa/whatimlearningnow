@@ -15,8 +15,9 @@ function setTag(tab) {
             return <Tag color='blue' className='topic_tag'>招聘</Tag>
         case 'dev':
             return <Tag color='purple' className='topic_tag'>测试</Tag>
+        default:
+            return null
     }
-    return null
 }
 
 export default function TopicTag(props) {

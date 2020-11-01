@@ -15,7 +15,7 @@ export default function TopicPage() {
     }, [id])
     return (
         <div id='topic'>
-            <h1 style={{textAlign:'center'}}>详情示例数据</h1>
+            <h1 style={{ textAlign: 'center' }}>详情示例数据</h1>
             {isError ? <Alert
                 closable
                 type={'error'}

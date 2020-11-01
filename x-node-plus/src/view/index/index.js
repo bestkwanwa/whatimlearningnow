@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import IndexNav from './indexNav';
 import IndexPagination from './indexPagination';
 import TopicList from '../../component/TopicList';
@@ -12,7 +12,6 @@ export default function IndexPage(props) {
     let { search } = useLocation()
     let { tab = 'all', page = 1 } = qs.parse(search.substring(1))
     useEffect(() => {
-        console.log('effect');
         getData(tab, page)
     }, [tab, page])
     return (

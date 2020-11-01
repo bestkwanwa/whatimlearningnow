@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Avatar, Card } from 'antd';
-import {UserOutlined} from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import { useParams } from 'react-router-dom';
 import { useUser } from '../../store/action';
 import { useSelector } from 'react-redux';
@@ -14,10 +14,9 @@ export default function UserPage() {
     useEffect(() => {
         getData(loginname)
     }, [loginname])
-    console.log('user', data);
     return (
         <div className='user-page'>
-            <h1 style={{textAlign:'center'}}>用户示例数据</h1>
+            <h1 style={{ textAlign: 'center' }}>用户示例数据</h1>
             <Card
                 loading={loading}
                 className='user-details'
@@ -33,7 +32,7 @@ export default function UserPage() {
                         注册时间：{<FromNow date={create_at}></FromNow>}
                         积分：{score}
                 </p>
-                <p>github: <a target={'_blank'} href={`https://github.com/${githubUsername}`}>github: https://github.com/${githubUsername}</a></p>
+                <p>github: <a target='_blank' rel="noopener noreferrer" href={`https://github.com/${githubUsername}`}>github: https://github.com/${githubUsername}</a></p>
             </Card>
             <Card
                 loading={loading}

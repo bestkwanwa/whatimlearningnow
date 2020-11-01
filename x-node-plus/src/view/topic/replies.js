@@ -2,9 +2,8 @@ import React from 'react';
 import { Avatar, Card, Comment, List } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import FromNow from '../../component/FromNow';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export default function Replies(props) {
-    // console.log('replies', props)
     let { data, loading } = props
     return (
         <Card
@@ -16,7 +15,7 @@ export default function Replies(props) {
                 pagination={true}
                 dataSource={data}
                 renderItem={(item) => {
-                    let { author,content ,create_at} = item
+                    let { author, content, create_at } = item
                     return <List.Item>
                         <Comment
                             datetime={<time>发布于：{<FromNow date={create_at}></FromNow>}</time>}
