@@ -24,6 +24,9 @@
     - content
     - comment
 - user详情
+    - details
+    - topics
+    - replies
 - 关于
 
 ## WorkFlow
@@ -85,3 +88,10 @@
 - 正文 >> Card 组件
     - 注意 title 属性的设置
 - 评论 >> Comment 组件
+
+### 用户详情
+**组件复用的便利**
+- 个人信息
+- 最近话题
+- 最近回复
+

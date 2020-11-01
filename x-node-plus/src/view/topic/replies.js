@@ -10,6 +10,7 @@ export default function Replies(props) {
         <Card
             title={'评论列表'}
             loading={loading}
+            type={'inner'}
         >
             <List
                 pagination={true}

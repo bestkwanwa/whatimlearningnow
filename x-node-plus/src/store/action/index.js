@@ -69,10 +69,8 @@ function useTopic() {
             type: 'topic_loading',
         })
         // 因为 cnodejs 服务器问题，根据 id 未能取得数据，故先全部使用示例数据 http://static2.cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312
-        console.log('lengh=', id.length);
         let example = '5433d5e4e737cbe96dcef312';
         http.get(`/topic/${id.length !== example.length ? id : example}`).then((res) => {
-            // 在这里进行数据筛选
             let { data } = res.data
             dispatch({
                 type: 'topic_loadover',
@@ -88,5 +86,26 @@ function useTopic() {
     }
 }
 
+// 获取user 
+function useUser() {
+    let dispatch = useDispatch()
+    return function (loginname) {
+        dispatch({
+            type: 'user_loading',
+        })
+        // 因为 cnodejs 服务器问题，根据 loginname 未能取得数据，故先全部使用示例数据 http://static2.cnodejs.org/api/v1/user/alsotang
+        loginname='alsotang'
+        http.get(`/user/${loginname}`).then((res) => {
+            let { data } = res.data
+            dispatch({
+                type: 'user_loadover',
+                data: data
+            })
+        }).catch((res)=>{
+            console.log('请求用户信息出错');
+        })
+    }
+}
 
-export { useTopicsList, useTopic }
+
+export { useTopicsList, useTopic,useUser }

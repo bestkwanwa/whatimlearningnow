@@ -49,6 +49,12 @@ img{
 #topic .ant-card-head{
     margin-top: 10px;
 }
+.user-page .ant-card{
+    margin-top: 10px;
+}
+.user-details{
+    text-align: center;
+}
 /* 媒体查询 */
 /* >=576 */
 @media all and (min-width:576px){

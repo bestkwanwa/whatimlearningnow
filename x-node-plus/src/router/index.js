@@ -40,7 +40,7 @@ const routes = [
         }
     },
     {
-        path: '/user/:username',
+        path: '/user/:loginname',
         exact: true,
         render(props) {
             return <UserPage {...props}></UserPage>
