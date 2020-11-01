@@ -10,8 +10,9 @@ export default function IndexPagination() {
     return (
         <div className='index-pagination'>
             <Pagination
-                defaultCurrent={page}
-                defaultPageSize={10}
+                // 注意curre属性值的类型为数字类型
+                current={page-0}
+                defaultPageSize={20}
                 total={100}
                 // 推荐使用onChange，使用起来性能更好
                 onChange={(page)=>{

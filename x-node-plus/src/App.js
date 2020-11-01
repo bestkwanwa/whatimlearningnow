@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { routes } from './router';
-import { Layout } from 'antd';
+import { Layout,Affix } from 'antd';
 import Header from './component/Header';
 import Footer from './component/Footer';
 // 保证覆盖

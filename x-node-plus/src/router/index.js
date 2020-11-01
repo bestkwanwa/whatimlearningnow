@@ -77,7 +77,7 @@ const navs = [
     },
     {
         to: '/getstart',
-        title: '入门',
+        title: '新手入门',
     },
     {
         to: '/about',

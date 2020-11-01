@@ -32,7 +32,7 @@ const tabs = ['share', 'ask', 'job']
 function useTopicsList() {
     // 在自定义hooks中使用其他hooks
     let dispatch = useDispatch()
-    return function (tab = 'all', page = 1, limit = 10, mdrender = true) {
+    return function (tab = 'all', page = 1, limit = 20, mdrender = true) {
         dispatch({
             type: 'topics_loading',
 
@@ -45,7 +45,17 @@ function useTopicsList() {
             if (tabs.includes(tab)) {
                 newData = data.filter(item => item.tab === tab)
             } else {
-                newData = data
+                switch (tab) {
+                    case 'good':
+                        newData=data.filter(item=>item.good===true)
+                        break;
+                    case 'dev':
+                        newData = []
+                        break;
+                    default:
+                        newData = data
+                        break;
+                }
             }
             // 0-9 10-19
             let start = (page - 1) * limit
@@ -94,18 +104,18 @@ function useUser() {
             type: 'user_loading',
         })
         // 因为 cnodejs 服务器问题，根据 loginname 未能取得数据，故先全部使用示例数据 http://static2.cnodejs.org/api/v1/user/alsotang
-        loginname='alsotang'
+        loginname = 'alsotang'
         http.get(`/user/${loginname}`).then((res) => {
             let { data } = res.data
             dispatch({
                 type: 'user_loadover',
                 data: data
             })
-        }).catch((res)=>{
+        }).catch((res) => {
             console.log('请求用户信息出错');
         })
     }
 }
 
 
-export { useTopicsList, useTopic,useUser }
+export { useTopicsList, useTopic, useUser }

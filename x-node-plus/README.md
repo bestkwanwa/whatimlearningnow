@@ -77,8 +77,8 @@
     - moment.js >> day.js
 
 ### 分页导航
-- antd 4.0.1 Pagination current 属性的 bug
-    使用 defaultCurrent ，每次请求重新渲染
+- antd 4.0.1 Pagination current 属性为数字类型
+    - 或者使用 defaultCurrent ，每次请求重新渲染
 - Pagination 使用 onChange 比 itemRender 性能更好
 
 ### 错误提示框
@@ -95,3 +95,10 @@
 - 最近话题
 - 最近回复
 
+### 关于和入门页
+- 路径导航 >> Breadcrumb 组件
+
+## 请求数据
+- topics >> 40条数据
+- topic >> 1条示例数据
+- user >> 1条示例数据

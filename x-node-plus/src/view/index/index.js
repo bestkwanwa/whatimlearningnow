@@ -22,7 +22,7 @@ export default function IndexPage(props) {
                 data={data}
                 loading={loading}
             ></TopicList>
-            {loading?'':<IndexPagination></IndexPagination>}
+            <IndexPagination></IndexPagination>
         </div>
     )
 }

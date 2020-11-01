@@ -17,6 +17,7 @@ export default function UserPage() {
     console.log('user', data);
     return (
         <div className='user-page'>
+            <h1 style={{textAlign:'center'}}>用户示例数据</h1>
             <Card
                 loading={loading}
                 className='user-details'
