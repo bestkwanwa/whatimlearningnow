@@ -36,3 +36,8 @@
 - Header
 - Menu
 - Route render 渲染的组件
+
+### 请求配置
+
+- 设置请求代理
+https://cloud.tencent.com/developer/article/1664425
