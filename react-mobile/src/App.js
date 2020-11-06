@@ -1,7 +1,11 @@
 import React from 'react';
+import IndexRouter from './router';
 function App() {
   return (
-    <div>hello</div>
+    <div className='app' >
+      <IndexRouter>
+      </IndexRouter>
+    </div>
   );
 }
 
