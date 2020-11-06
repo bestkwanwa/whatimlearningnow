@@ -1,11 +1,12 @@
 import React from 'react';
 import IndexRouter from './router';
+import Frame from './common/component/Frame';
 function App() {
   return (
-    <div className='app' >
+    <Frame>
       <IndexRouter>
       </IndexRouter>
-    </div>
+    </Frame>
   );
 }
 

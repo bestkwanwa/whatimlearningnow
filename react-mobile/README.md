@@ -11,7 +11,7 @@
 
 ## workflow
 
-### 初始化项目&划分项目结构
+### 项目初始化&项目结构划分
 
 - 建立便于维护的项目结构
     - store >> redux 仓库
@@ -23,8 +23,16 @@
         - course
         - work
     - router >> 路由组件与路由相关信息
+    - common
+        - component >> 组件
 
 ### 路由规划
 
 - 建立路由表
 - 创建路由组件
+
+### 页面框架
+
+- Header
+- Menu
+- Route render 渲染的组件
