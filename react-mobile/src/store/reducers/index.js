@@ -1,5 +1,11 @@
+import getUser from './login';
+
 function index(state={},action){
     return state
 }
 
-export default {index}
+// conncet的callback只能返回一个对象
+export default {
+    index,
+    getUser
+}
