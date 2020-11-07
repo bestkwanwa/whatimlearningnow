@@ -1,5 +1,6 @@
 import React from 'react';
 import http from '../../store/action/http';
+import { Link } from 'react-router-dom';
 export default function Header() {
     // test request
     http.post('/lecturer/lists?page=1&rows=20', {
@@ -16,7 +17,7 @@ export default function Header() {
                 <a >导航</a>
             </nav>
             <h1 className="logo">miaov.com</h1>
-            <a className="user"></a>
+            <Link className='user' to={'/login'}></Link>
         </header>
     )
 }
