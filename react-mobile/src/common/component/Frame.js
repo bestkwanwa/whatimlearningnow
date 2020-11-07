@@ -4,7 +4,6 @@ import Menu from './Menu';
 import '../css/reset.css';
 import '../css/common.css';
 export default function Frame(props) {
-    console.log(props);
     return (
         <div>
             <Header></Header>

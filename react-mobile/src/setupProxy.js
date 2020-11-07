@@ -1,3 +1,4 @@
+  // prox 中间件
   const proxy=require('http-proxy-middleware')
   
   module.exports=function(app){
