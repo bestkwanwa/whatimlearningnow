@@ -8,7 +8,7 @@ export default function useLogin(data) {
         console.log('data', data);
         // 返回一个promise
         return http.post('/user/login', data).then(res => {
-            console.log('res', res);
+            // console.log('res', res);
             if (res.data.code === 0) {
                 console.log('success');
                 dispatch({
