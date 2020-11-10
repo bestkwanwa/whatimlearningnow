@@ -4,7 +4,6 @@ import login from '../../store/action/login';
  function IndexPage(props){
      const dispatch=useDispatch()
      const state=useSelector(state=>state)
-    console.log('state',state);
     return (
         <div>
             <h1>IndexPage</h1>

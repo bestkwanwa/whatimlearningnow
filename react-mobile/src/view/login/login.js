@@ -28,7 +28,7 @@ export default function Login() {
             console.log(data);
             if (data.code !== 0) {
                 // 登录失败，重新请求验证码
-                setVerCode(`/miaov/user/verify?${Date.now()}`)
+                setVerCodeSrc(`/miaov/user/verify?${Date.now()}`)
             } else {
                 // 登录成功
                 goBack()
