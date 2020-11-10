@@ -53,3 +53,6 @@ https://cloud.tencent.com/developer/article/1664425
 
 ### 注册
 - 注册完返回登录页进行登录
+
+### 滑屏处理
+- 使用 better-scroll

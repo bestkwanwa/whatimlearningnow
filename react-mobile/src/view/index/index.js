@@ -7,10 +7,22 @@ import login from '../../store/action/login';
     return (
         <div>
             <h1>IndexPage</h1>
-        <button onClick={()=>{
-            // test
-            dispatch(login())
-        }}>click</button>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
+            <h1>IndexPage</h1>
         </div>
     )
 }

@@ -10,4 +10,9 @@ function useBack() {
         }
     }
 }
-export { useBack }
+
+// 获取屏幕高度
+function useInnerHeight(){
+    return window.innerHeight
+}
+export { useBack,useInnerHeight }
