@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useLogin from '../../store/action/login';
-import {useBack} from '../../common/hooks';
-export default function Login() {
+import { useBack } from '../../common/hooks';
+export default function Login(props) {
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const [verCode, setVerCode] = useState('')
     const [verCodeShow, setVerCodeShow] = useState(false)
     const [verCodeSrc, setVerCodeSrc] = useState(`/miaov/user/verify?${Date.now()}`)
-    const state = useSelector(state => state)
     const dispatch = useDispatch()
-
-    const goBack=useBack()
-
+    const goBack = useBack()
+    const { setDeg } = props
     const login = useLogin(
         {
             verify: verCode,
@@ -20,7 +18,6 @@ export default function Login() {
             password
         }
     )
-
     function toLogin() {
         dispatch(
             login
@@ -40,7 +37,7 @@ export default function Login() {
     return (
         <div className="login_box">
             <figure className="user_img">
-                {/* <img alt="" /> */}
+                <img alt="" src={require('../../common/images/user_img.png')} />
                 <figcaption>如有账号，请直接登录</figcaption>
             </figure>
             <div className="login_form">
@@ -94,7 +91,7 @@ export default function Login() {
                     className="form_btn"
                     onClick={toLogin}
                 >登录</button>
-                <p className="form_tip">没有帐号？<a href="#">立即注册</a></p>
+                <p className="form_tip">没有帐号？<a onClick={() => { setDeg(-180) }}>立即注册</a></p>
             </div>
         </div>
     )

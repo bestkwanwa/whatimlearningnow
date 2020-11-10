@@ -50,3 +50,6 @@ https://cloud.tencent.com/developer/article/1664425
 - 退出登录
 - 菜单展开
     - 取消双击缩放
+
+### 注册
+- 注册完返回登录页进行登录
