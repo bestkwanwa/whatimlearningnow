@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useLogin from '../../store/action/login';
+import {useBack} from '../../common/hooks';
 export default function Login() {
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
@@ -9,6 +10,9 @@ export default function Login() {
     const [verCodeSrc, setVerCodeSrc] = useState(`/miaov/user/verify?${Date.now()}`)
     const state = useSelector(state => state)
     const dispatch = useDispatch()
+
+    const goBack=useBack()
+
     const login = useLogin(
         {
             verify: verCode,
@@ -16,16 +20,18 @@ export default function Login() {
             password
         }
     )
+
     function toLogin() {
         dispatch(
             login
         ).then(data => {
             console.log(data);
             if (data.code !== 0) {
-                // 登录失败
-                alert(data.msg)
+                // 登录失败，重新请求验证码
+                setVerCode(`/miaov/user/verify?${Date.now()}`)
             } else {
                 // 登录成功
+                goBack()
             }
         })
     }
