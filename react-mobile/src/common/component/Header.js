@@ -5,7 +5,7 @@ import { useBack } from '../../common/hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import useIsLogin from '../../store/action/islogin';
 import useLogout from '../../store/action/logout';
-export default function Header() {
+export default function Header(props) {
     const location = useLocation()
     const goBack = useBack()
     const user = useSelector(state => state.getUser)
@@ -13,6 +13,7 @@ export default function Header() {
     const [btnShow, setBtnShow] = useState(false)
     const  dispatch=useDispatch()
     const logout=useLogout()
+    const {changeMenuState}=props
     useEffect(() => {
         isLogin()
     }, [!user.length])
@@ -41,7 +42,9 @@ export default function Header() {
     }
     return (
         <header id="header">
-            <nav className="menu">
+            <nav className="menu"
+                onClick={changeMenuState}
+            >
                 {location.pathname === '/login' ?
                     <a
                         className='header-btn-left iconfont icon-back'
