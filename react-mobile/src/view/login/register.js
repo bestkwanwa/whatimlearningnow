@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import useRegister from '../../store/action/register';
 export default function Register(props) {
-    const dispatch = useDispatch()
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
@@ -20,9 +19,7 @@ export default function Register(props) {
         }
     )
     function toRegister() {
-        dispatch(
-            register
-        ).then(data => {
+        register().then(data => {
             console.log('register info', data);
             if (data.code === 0) {
                 // 注册成功，返回登录页

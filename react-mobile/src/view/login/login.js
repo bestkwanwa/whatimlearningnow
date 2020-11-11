@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import useLogin from '../../store/action/login';
 import { useBack } from '../../common/hooks';
 export default function Login(props) {
@@ -8,7 +7,6 @@ export default function Login(props) {
     const [verCode, setVerCode] = useState('')
     const [verCodeShow, setVerCodeShow] = useState(false)
     const [verCodeSrc, setVerCodeSrc] = useState(`/miaov/user/verify?${Date.now()}`)
-    const dispatch = useDispatch()
     const goBack = useBack()
     const { setDeg } = props
     const login = useLogin(
@@ -19,9 +17,7 @@ export default function Login(props) {
         }
     )
     function toLogin() {
-        dispatch(
-            login
-        ).then(data => {
+        login().then(data => {
             console.log(data);
             if (data.code !== 0) {
                 // 登录失败，重新请求验证码
