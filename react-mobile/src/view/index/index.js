@@ -1,6 +1,9 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import Tab from '../../common/component/Tab';
+import Course from './course';
+import Vip from './vip';
+import Miaov from './miaov';
 import '../../common/css/index.css';
 let imgData=[
     require('../../common/images/tab/img1.png'),
@@ -9,16 +12,21 @@ let imgData=[
     require('../../common/images/tab/img4.png'),
 ]
  function IndexPage(props){
-     const dispatch=useDispatch()
-     const state=useSelector(state=>state)
+    //  const dispatch=useDispatch()
+    //  const state=useSelector(state=>state)
     return (
         <div>
             <Tab 
             data={imgData}
             render={(data)=>{
-                return <img src={data} />
+                return <img alt='carousel' src={data} />
             }}
             ></Tab>
+            <section className="index_content">
+                <Course />
+                <Vip />
+                <Miaov />
+            </section>
         </div>
     )
 }

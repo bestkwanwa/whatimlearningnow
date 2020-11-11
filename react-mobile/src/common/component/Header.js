@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import http from '../../store/action/http';
 import { Link, useLocation } from 'react-router-dom';
 import { useBack } from '../../common/hooks';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import useIsLogin from '../../store/action/islogin';
 import useLogout from '../../store/action/logout';
 export default function Header(props) {
@@ -11,12 +10,12 @@ export default function Header(props) {
     const user = useSelector(state => state.getUser)
     const isLogin = useIsLogin()
     const [btnShow, setBtnShow] = useState(false)
-    const  dispatch=useDispatch()
+    // const  dispatch=useDispatch()
     const logout=useLogout()
     const {changeMenuState}=props
     useEffect(() => {
         isLogin()
-    }, [!user.length])
+    }, [user.length,isLogin])
     function loginState() {
         if (location.pathname === '/login') {
             return ''
@@ -46,7 +45,7 @@ export default function Header(props) {
                 onClick={changeMenuState}
             >
                 {location.pathname === '/login' ?
-                    <a
+                    <a  
                         className='header-btn-left iconfont icon-back'
                         onClick={goBack}
                     ></a> :

@@ -23,11 +23,11 @@ export default function Register(props) {
         dispatch(
             register
         ).then(data => {
-            console.log('register info',data);
+            console.log('register info', data);
             if (data.code === 0) {
                 // 注册成功，返回登录页
                 setDeg(0)
-            } 
+            }
             setVcodeSrc("/miaov/user/verify?" + Date.now())
         })
     }
@@ -81,6 +81,7 @@ export default function Register(props) {
                     />
                     {vcodeShow ?
                         <img
+                            alt='verifycode'
                             style={{ width: '3.5rem', float: 'right' }}
                             className="verify"
                             src={vcodeSrc}

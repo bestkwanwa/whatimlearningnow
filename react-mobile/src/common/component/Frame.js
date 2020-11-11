@@ -17,7 +17,11 @@ export default function Frame(props) {
         setMenuState(false)
     }
     useEffect(() => {
-        pageScroll = new BetterScroll(wrap.current)
+        pageScroll = new BetterScroll(wrap.current,{
+            preventDefaultException:{
+                tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/,
+            }
+        })
     }, [])
     return (
         <div>

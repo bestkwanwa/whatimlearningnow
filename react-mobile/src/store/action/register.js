@@ -1,8 +1,8 @@
 import http from './http';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
 export default function useRegister(data) {
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     return function () {
         return http.post('/user/register', data).then(res => {
             // console.log('res', res);
