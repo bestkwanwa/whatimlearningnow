@@ -22,7 +22,7 @@ export default function Frame(props) {
     return (
         <div>
             <Header changeMenuState={changeMenuState}></Header>
-            <Menu></Menu>
+            <Menu menuHide={menuHide}></Menu>
             <div id='main' style={{
                 transform: `translateX(${menuState ? 4.5 : 0}rem)`,
                 height: innerH

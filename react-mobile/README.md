@@ -56,3 +56,7 @@ https://cloud.tencent.com/developer/article/1664425
 
 ### 滑屏处理
 - 使用 better-scroll
+
+### 菜单栏
+- 路由表渲染
+- 选择后隐藏

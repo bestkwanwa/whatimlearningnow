@@ -1,5 +1,5 @@
 import React from 'react';
-import routeList from './route-list';
+import {routeList} from './route-list';
 import { Route, Switch } from 'react-router-dom';
 
 // 主页路由
