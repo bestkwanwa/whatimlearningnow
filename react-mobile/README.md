@@ -63,3 +63,4 @@ https://cloud.tencent.com/developer/article/1664425
 
 ### 通用组件 Tab
 - 根据传入的 render 进行渲染
+- 轮播效果
