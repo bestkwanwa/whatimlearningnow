@@ -60,3 +60,6 @@ https://cloud.tencent.com/developer/article/1664425
 ### 菜单栏
 - 路由表渲染
 - 选择后隐藏
+
+### 通用组件 Tab
+- 根据传入的 render 进行渲染
