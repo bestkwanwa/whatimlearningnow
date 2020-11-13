@@ -1,21 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Tab from '../../common/component/Tab';
 import Course from './course';
 import Vip from './vip';
 import Miaov from './miaov';
 import Frame from '../../common/component/Frame';
 import Works from './works';
+import useWorks from '../../store/action/works';
 import '../../common/css/index.css';
+import { useSelector } from 'react-redux';
 let imgData = [
     require('../../common/images/tab/img1.png'),
     require('../../common/images/tab/img2.png'),
     require('../../common/images/tab/img3.png'),
     require('../../common/images/tab/img4.png'),
 ]
-function IndexPage(props) {
+function IndexPage() {
+    let [page,setPage]=useState(1)
+    const getWorks=useWorks()
+    function getWorksData(){
+        let promise=getWorks(page)
+        setPage(++page)
+        return promise
+    }
+    useEffect(()=>{
+        getWorksData()
+    },[])
     return (
-        <Frame>
-
+        <Frame pullUp={true} getWorksData={getWorksData}>
             <div>
                 <Tab
                     data={imgData}
@@ -27,7 +38,7 @@ function IndexPage(props) {
                     <Course />
                     <Vip />
                     <Miaov />
-                    <Works />
+                    <Works page={page} />
                 </section>
             </div>
 
