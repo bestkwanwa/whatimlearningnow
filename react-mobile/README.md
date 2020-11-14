@@ -73,3 +73,8 @@ https://cloud.tencent.com/developer/article/1664425
 - 作品区
     - 请求数据
     - 向上滑屏请求数据
+
+### 课程页
+- 课程页
+
+todo:切换回首页请求的数据会重复

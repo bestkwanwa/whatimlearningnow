@@ -88,7 +88,7 @@ export default function Login(props) {
                     className="form_btn"
                     onClick={toLogin}
                 >登录</button>
-                <p className="form_tip">没有帐号？<a href='/#' onClick={() => { setDeg(-180) }}>立即注册</a></p>
+                <p className="form_tip">没有帐号？<a onClick={() => { setDeg(-180) }}>立即注册</a></p>
             </div>
         </div>
     )
