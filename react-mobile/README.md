@@ -78,3 +78,7 @@ https://cloud.tencent.com/developer/article/1664425
 - 课程页
 
 todo:切换回首页请求的数据会重复
+
+### 讲师页
+- 请求数据
+- 页面结构
