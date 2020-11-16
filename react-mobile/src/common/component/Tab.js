@@ -1,54 +1,58 @@
 import React, { useEffect, useRef, useState } from 'react';
 import BetterScroll from 'better-scroll';
 
-export default function Tab(props){
-    const [now,setNow]=useState(0)
-    let {data,render}=props
-    let bannerWrap=useRef(null)
-    let betterScroll=null
-    useEffect(()=>{
+// 轮播图组件
+export default function Tab(props) {
+    const [now, setNow] = useState(0)
+    let { data, render } = props
+    console.log('now data',data);
+    let bannerWrap = useRef(null)
+    let betterScroll = null
+    useEffect(() => {
         let timer = 0;
-        betterScroll = new BetterScroll(bannerWrap.current,{
+        betterScroll = new BetterScroll(bannerWrap.current, {
             scrollX: true,
             scrollY: false,
             eventPassthrough: "vertical",
             momentum: false,
-            snap:{
+            snap: {
                 loop: true
             }
         });
-        betterScroll.on("scrollEnd",()=>{
+        betterScroll.on("scrollEnd", () => {
             setNow(betterScroll.getCurrentPage().pageX);
         });
-        timer = setInterval(()=>{
+        timer = setInterval(() => {
             betterScroll.next(200);
-        },2000);
-        bannerWrap.current.addEventListener("touchstart",()=>{
+        }, 2000);
+        bannerWrap.current.addEventListener("touchstart", () => {
             clearInterval(timer);
         });
-        bannerWrap.current.addEventListener("touchend",()=>{
-            timer = setInterval(()=>{
+        bannerWrap.current.addEventListener("touchend", () => {
+            timer = setInterval(() => {
                 betterScroll.next(200)
-            },2000);
+            }, 2000);
         })
-        return ()=>{
+        return () => {
             clearInterval(timer);
         }
-    },[betterScroll]);
+    }, [betterScroll]);
     return (
-        <div className='banner'>
-            <div className='banner_img' ref={bannerWrap}>
-                <ul className='banner_list clearfix'>
+        <div className="banner">
+            <div className="banner_img" ref={bannerWrap}>
+                <ul className="banner_list clearfix">
                     {
-                        data.map((item,index)=><li key={index}>{render(item)}</li>)
+                        data.map((item, index) => <li key={index}>{render(item)}</li>)
                     }
                 </ul>
             </div>
-            <div className='banner_nav'>
+            {
+                data.length <= 1 ? "" : (<ul className="banner_nav">
                     {
-                        data.map((item,index)=><li key={index} className={index===now?"active":""}></li>)
+                        data.map((item, index) => <li key={index} className={index === now ? "active" : ""}></li>)
                     }
-            </div>
+                </ul>)
+            }
         </div>
     )
 }

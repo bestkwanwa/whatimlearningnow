@@ -91,4 +91,6 @@ todo:切换回首页请求的数据会重复
 ### 作品详情页
 - 解决 better-scroll 阻止默认事件
 - 骨架屏
-- 
+- 解决重复请求
+    - 在state里多一个page，页面的page状态与state的page保持关联
+    - 或者，多加一个action.type，这个状态下清空state

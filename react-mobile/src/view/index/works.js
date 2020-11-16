@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import useWorks from '../../store/action/works';
-export default function Works(props) {
-    // const {page}=props
+export default function Works() {
     const works = useSelector(state => state.works)
-    let { data, loadEnd, loading } = works;
-    console.log('data',data);
+    let { data, loadEnd, loading ,page} = works;
     return (
         <div className="works">
             <h3>学员作品</h3>

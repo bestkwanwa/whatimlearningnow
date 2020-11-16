@@ -7,6 +7,7 @@ import Frame from '../../common/component/Frame';
 import Works from './works';
 import useWorks from '../../store/action/works';
 import '../../common/css/index.css';
+import { useSelector } from 'react-redux';
 let imgData = [
     require('../../common/images/tab/img1.png'),
     require('../../common/images/tab/img2.png'),
@@ -14,7 +15,9 @@ let imgData = [
     require('../../common/images/tab/img4.png'),
 ]
 function IndexPage() {
-    let [page,setPage]=useState(1)
+    let works = useSelector(state => state.works)
+    // 为什么这里不能直接使用works.page去action发请求，works.page为什么不更新
+    let [page,setPage]=useState(works.page)
     const getWorks=useWorks()
     function getWorksData(){
         let promise=getWorks(page)
@@ -37,7 +40,7 @@ function IndexPage() {
                     <Course />
                     <Vip />
                     <Miaov />
-                    <Works page={page} />
+                    <Works />
                 </section>
             </div>
 
