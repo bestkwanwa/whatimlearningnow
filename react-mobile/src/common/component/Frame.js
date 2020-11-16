@@ -21,6 +21,7 @@ export default function Frame(props) {
         pageScroll = new BetterScroll(wrap.current,{
             preventDefaultException:{
                 tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/,
+                className: /(^|\s)work_a(\s|$)/ 
             },
             pullUpLoad: pullUp?{threshold:200}:false,
         })
