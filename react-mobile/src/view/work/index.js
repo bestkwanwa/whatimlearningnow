@@ -1,42 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import Frame from "../../common/component/Frame";
 import useWork from '../../store/action/work';
-// import getMessageList from "../../store/action/getMessageList";
 import Skeleton from '../../common/component/skeleton';
-// import Main from './main';
-// import Message from './message';
+import Main from './main';
 import { useParams } from 'react-router-dom';
-
-
-import Tab from '../../common/component/Tab';
-
-
 import "../../common/css/miaov.css";
-export default function Work(props) {
-    const state = useSelector(state => ({
-        ...(state.work),
-        user: state.getUser
-    }))
+export default function Work() {
+    console.log('work render');
+    const state = useSelector(state => state.work)
 
     const { data, loading } = state
-
-    console.log('loading', loading);
-    console.log('data', data);
 
     const params = useParams()
     let { id } = params;
 
-    // let { data, loading, dispatch, match, user, history } = props;
-    let [showMessage, setShow] = useState(false);
-    // function getMessageData() {
-    //     return dispatch(getMessageList(id));
-    // }
+    // let [showMessage, setShow] = useState(false);
     const getWork = useWork()
     const dispatch = useDispatch()
     useEffect(() => {
         getWork(id)
-        // getMessageData();
         return () => {
             // 重置为空
             dispatch({
@@ -54,12 +37,7 @@ export default function Work(props) {
             // getData={getMessageData}
             >
                 {
-                    loading ? <Skeleton /> : (<div className="workDetails">
-                        <Tab
-                            data={data.image_path.map(item => item.path)}
-                            render={src => <img src={src} />}
-                        ></Tab>
-                    </div>)
+                    loading ? <Skeleton /> : (<Main data={data}></Main>)
                 }
             </Frame>
             <footer

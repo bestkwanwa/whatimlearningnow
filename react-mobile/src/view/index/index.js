@@ -15,6 +15,7 @@ let imgData = [
     require('../../common/images/tab/img4.png'),
 ]
 function IndexPage() {
+    console.log('index render');
     let works = useSelector(state => state.works)
     // 为什么这里不能直接使用works.page去action发请求，works.page为什么不更新
     let [page,setPage]=useState(works.page)

@@ -5,7 +5,6 @@ import BetterScroll from 'better-scroll';
 export default function Tab(props) {
     const [now, setNow] = useState(0)
     let { data, render } = props
-    console.log('now data',data);
     let bannerWrap = useRef(null)
     let betterScroll = null
     useEffect(() => {
