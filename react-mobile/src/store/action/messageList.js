@@ -1,5 +1,5 @@
 import HTTP from "./http";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 export default function useMessageList() {
     const dispatch = useDispatch()
     // 这里的page在组件render时获取，为1。

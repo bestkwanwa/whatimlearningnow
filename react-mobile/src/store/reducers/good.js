@@ -1,8 +1,8 @@
-export default function good(state={
+export default function good(state = {
     good: false,
     goodid: 0
-},action){
-    switch(action.type){
+}, action) {
+    switch (action.type) {
         case "GOOD":
             return {
                 good: true,
@@ -12,7 +12,8 @@ export default function good(state={
             return {
                 good: false,
                 goodid: 0
-            };        
+            };
+        default:
+            return state
     };
-    return state
 }

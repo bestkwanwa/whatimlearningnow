@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import useRegister from '../../store/action/register';
 export default function Register(props) {
     const [user, setUser] = useState("");

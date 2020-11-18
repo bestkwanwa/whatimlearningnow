@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import {connect, useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import usePutMessage from "../../store/action/putMessage";
 function Message(props){
     const putMessage=usePutMessage()

@@ -35,7 +35,7 @@ export default function Tab(props) {
         return () => {
             clearInterval(timer);
         }
-    }, [betterScroll]);
+    }, []);
     return (
         <div className="banner">
             <div className="banner_img" ref={bannerWrap}>

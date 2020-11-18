@@ -6,7 +6,7 @@ function useGetGood() {
         return HTTP.post(`/lecturer/getgood`, {
             article_id: id
         }).then(res => {
-            if (res.data.code == 0) {
+            if (res.data.code === 0) {
                 dispatch({
                     type: "GOOD",
                     goodid: res.data.gooid
@@ -26,7 +26,7 @@ function useSetGood() {
         return HTTP.post(`/lecturer/good`, {
             article_id: id
         }).then(res => {
-            if (res.data.code == 0) {
+            if (res.data.code === 0) {
                 getGood(id);
                 return true;
             }
@@ -41,7 +41,7 @@ function useCancelGood() {
             article_id: id,
             goodid
         }).then(res => {
-            if (res.data.code == 0) {
+            if (res.data.code === 0) {
                 dispatch({
                     type: "CANCEL_GOOD"
                 });

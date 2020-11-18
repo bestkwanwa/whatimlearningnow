@@ -1,8 +1,8 @@
-export default function work(state={
+export default function work(state = {
     data: {},
     loading: true
-},action){
-    switch(action.type){
+}, action) {
+    switch (action.type) {
         case "WORK_RESET":
             return {
                 data: {},
@@ -12,7 +12,8 @@ export default function work(state={
             return {
                 loading: false,
                 data: action.data
-            };        
+            };
+        default:
+            return state
     };
-    return state
 }
