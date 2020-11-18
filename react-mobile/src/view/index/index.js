@@ -29,7 +29,7 @@ function IndexPage() {
         getWorksData()
     },[])
     return (
-        <Frame pullUp={true} getWorksData={getWorksData}>
+        <Frame pullUp={true} getData={getWorksData}>
             <div>
                 <Tab
                     data={imgData}

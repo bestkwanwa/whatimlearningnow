@@ -2,7 +2,7 @@ import React from 'react';
 import Tab from '../../common/component/Tab';
 import Article from './article';
 import Good from './good';
-// import MessageList from './messsageList';
+import MessageList from './messageList';
 export default function Main(props){
     let {data} = props;
     return (
@@ -17,7 +17,7 @@ export default function Main(props){
                 />
                 <article className="miiaov_comment">
                     <Good />
-                    {/* <MessageList /> */}
+                    <MessageList />
                 </article>
             </div>
         </div>

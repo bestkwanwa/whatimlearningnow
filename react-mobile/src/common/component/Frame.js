@@ -6,7 +6,7 @@ import { useInnerHeight } from '../hooks';
 import '../css/reset.css';
 import '../css/common.css';
 export default function Frame(props) {
-    const {pullUp,getWorksData}=props
+    const {pullUp,getData}=props
     const [menuState, setMenuState] = useState(false)
     const innerH = useInnerHeight()
     let pageScroll = null
@@ -27,13 +27,15 @@ export default function Frame(props) {
         })
         pageScroll.on('pullingUp',()=>{
             console.log('more');
-            getWorksData().then(res=>{
+            getData().then(res=>{
+                console.log('frame',res);
                 if(res){
                     // 拿到数据了完成本次滑屏
                     pageScroll.finishPullUp()
                     //  使DOM结构发生变化的时滚动的效果正常
                     pageScroll.refresh()
                 }else{
+                    // console.log('end');
                     // res false表示没有可请求的数据
                     pageScroll.closePullUp()
                 }

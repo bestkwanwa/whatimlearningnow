@@ -9,7 +9,6 @@ export default function Good() {
     const getGood=useGetGood()
     const setGood=useSetGood()
     const cancelGood=useCancelGood()
-    console.log('render');
     const {data} = useSelector(state => state.work)
     const {good:goodNub,id}=data
     let point = {};
@@ -69,9 +68,3 @@ export default function Good() {
         </p>
     );
 }
-
-
-// withRouter(connect(state => ({
-//     ...state.good,
-//     user: state.getUser
-// }))(Good));
