@@ -30,6 +30,8 @@ export default function Login(props) {
     }
     // 组件受控后，每次change都会执行一遍
     // console.log('typing');
+
+    let point = {};
     return (
         <div className="login_box">
             <figure className="user_img">
@@ -74,16 +76,26 @@ export default function Login(props) {
                     />
                     {verCodeShow ?
                         <img
-                            alt='verifycode'
-                            style={{ width: '3.5rem', float: 'right' }}
+                            style={{width:'3.5rem',float:'right'}}
+                            className="verify"
                             src={verCodeSrc}
-                            onClick={() => {
-                                // 带上时间戳是为了防止缓存
-                                setVerCodeSrc(`/miaov/user/verify?${Date.now()}`)
+                            onTouchStart={(e) => {
+                                let touch = e.changedTouches[0];
+                                point.x = touch.pageX;
+                                point.y = touch.pageY;
                             }}
-                        /> : ''}
+                            onTouchEnd={(e) => {
+                                let touch = e.changedTouches[0];
+                                let nowPoint = {
+                                    x: touch.pageX,
+                                    y: touch.pageY
+                                };
+                                if (Math.abs(nowPoint.x - point.x) < 5
+                                    && Math.abs(nowPoint.y - point.y) < 5) {
+                                    setVerCodeSrc("/miaov/user/verify?" + Date.now())
+                                }
+                            }} /> : ""}
                 </p>
-
                 <button
                     className="form_btn"
                     onClick={toLogin}
