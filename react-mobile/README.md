@@ -2,6 +2,19 @@
 
 ## 项目依赖
 
+react
+react-dom
+redux
+react-redux 
+redux-thunk
+react-router-dom
+axios >> 前后端通信
+better-scroll >> 处理滑屏
+proxy >> 开发环境代理转发
+http-proxy-middleware >> 开发环境代理转发中间件
+qs >> 解析querystring
+
+ 
 ## 视图
 - 首页
 - 课程页
