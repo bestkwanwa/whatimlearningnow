@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>    
+    <script>
+        let box=document.getElementById('box')
+        function handler(e){
+            console.log('this is handler.');
+            console.log('myEvent',e);
+            console.log('handler this',this);
+            console.log(e.detail);
+        }
+        box.addEventListener('myEvent',handler)
+        box.onclick=function(e){
+            console.log('onclick this',this);
+            console.log('MouseEvent',e);
+            this.dispatchEvent(new CustomEvent('myEvent',{
+                detail:'detail'
+            }))
+        }
+    </script>
+</body>
+</html>
