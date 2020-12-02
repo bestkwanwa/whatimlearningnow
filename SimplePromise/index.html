@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./SimplePromise.js"></script>
+</head>
+
+<body>
+    <script>
+        // 宏任务
+        setTimeout(() => {
+            console.log('宏任务！', 'timer');
+        })
+
+        // handle是不是箭头函数不影响resolve的调用
+        let p = new SimplePromise((resolve, reject) => {
+            // setTimeout(() => {
+            // resolve('resolve')
+            reject('reject')
+            // }, 1000)
+        })
+
+
+        /*
+            9.静态方法 finally
+        */
+        let promise=new Promise(res=>{
+            res('res')
+        })
+        p.then(res => {
+            console.log(res);
+        }, err => {
+            console.log(err);
+        }).finally(() => {
+            console.log('end');
+        })
+
+        /*
+            8.静态方法 race
+        */
+
+        // let p1=new SimplePromise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         reject('reject 1000ms')
+        //     },1000)
+        // })
+        // let p2=new SimplePromise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         reject('reject 2000ms')
+        //     },2000)
+        // })
+        // let p3=new SimplePromise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         reject('reject 3000ms')
+        //     },3000)
+        // })
+        // let p4=new SimplePromise((res,rej)=>{
+        //     setTimeout(()=>{
+        //         res('resolve 500ms')
+        //     },500)
+        // })
+        // let result=SimplePromise.race([p1,p2,p3,p4])
+        // 会出现 onFUlfilled 和 onRejected 都执行的问题
+        // result.then(res=>{
+            // 这里得到最快的resolve
+            // console.log('res',res);
+        // },err=>{
+            // 这里得到最快的reject
+            // console.log('err',err);
+        // })
+        // 这里会得到3000ms resolve的Promise对象
+        // console.log(result);
+        // TODO: then应该只允许一个回调被执行
+
+        /*
+            7.静态方法 all
+        */
+        // let p1 = new SimplePromise((resolve, reject) => {
+        //     resolve(1)
+        // })
+        // let p2 = new SimplePromise((resolve, reject) => {
+        //     resolve(2)
+        // })
+        // SimplePromise.all([p1, p2]).then(res => {
+        //     console.log(res);
+        // })
+
+        /*
+            6.静态方法 resolve / reject
+        */
+        // let p1=SimplePromise.resolve('static resolve')
+        // console.log('p1',p1);
+        // p1.then(res=>{
+        //     console.log(res);
+        // })
+        // let p2=SimplePromise.reject('static reject')
+        // console.log('p2',p2);
+
+        /*
+            5.catch 方法
+        */
+        // p.then(()=>{
+        //     console.log('first then',res);
+        // }).catch(err=>{
+        //     console.log('error',err);
+        // })
+
+        /*
+            4.then 链式调用
+        */
+        // let result = p.then(res => {
+        //     console.log('first then', 'res:', res);
+        //     return new SimplePromise((resolve, reject) => {
+        //         resolve('return new Promise<fulfilled>')
+        //     })
+        // })
+        // result.then(res=>{
+        //     console.log('second then','res:',res);
+        // })
+
+        /*
+            3.微任务
+        */
+        // p.then(res => {
+        //     console.log('微任务！', 'res:', res);
+        // })
+
+        /*
+            2.then 多次调用
+        */
+        // p.then(res=>{
+        //     console.log('onFulfilled',res);
+        // },err=>{
+        //     console.log('onRejected',res);
+        // })
+        // p.then(res=>{
+        //     console.log('onFulfilled2',res);
+        // },err=>{
+        //     console.log('onRejected'2,res);
+        // })
+
+        /*
+           1.onFulfilled / onRejected
+        */
+        // p.then(res => {
+        //     console.log('onFulfilled', res);
+        // }, err => {
+        //     console.log('onRejected', err);
+        // })
+    </script>
+
+</body>
+
+</html>
