@@ -11,6 +11,7 @@
     <div id="app">
         <p id="p"></p>
         <input type="text" name="" id="input">
+        <button id="btn">click to change data</button>
     </div>
     <script>
         // 双绑：数据与视图绑定
@@ -43,6 +44,9 @@
         })
         input.addEventListener('input', e => {
             data.msg = e.target.value
+        })
+        document.getElementById('btn').addEventListener('click',()=>{
+            data.msg='Data has changed!'
         })
     </script>
 </body>
