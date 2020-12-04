@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p id="p"></p>
+        <input type="text" name="" id="input">
+    </div>
+    <script>
+        // 双绑：数据与视图绑定
+        let input = document.getElementById('input')
+        let p = document.getElementById('p')
+        let data = {
+            msg: 'Hello, World!'
+        }
+        let currentValue = data.msg
+        Object.defineProperty(data, 'msg', {
+            get() {
+                return currentValue
+            },
+            set(newValue) {
+                currentValue = newValue
+                p.textContent = currentValue
+                input.value = currentValue
+            }
+        })
+        init()
+        function init() {
+            p.textContent = currentValue
+            input.value = currentValue
+        }
+        input.addEventListener('focus', e => {
+            e.target.value = ''
+        })
+        input.addEventListener('blur', e => {
+            e.target.value = data.msg
+        })
+        input.addEventListener('input', e => {
+            data.msg = e.target.value
+        })
+    </script>
+</body>
+
+</html>
