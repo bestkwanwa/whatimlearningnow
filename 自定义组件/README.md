@@ -1,4 +1,7 @@
 # 自定义组件
+
+[demo](https://bestkwanwa.github.io/demolib/custom-component.html)
+
 ## 封装会话框组件
 封装组件不考虑vdom和封装css，仅学习封装组件思路。
 
